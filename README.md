@@ -1,9 +1,14 @@
 # StringTutorial
+
+
 using dnlib.DotNet;
+
 using dnlib.DotNet.Emit;
-using dnlib.DotNet.Writer;
-    class Program
-    {
+
+using dnlib.DotNet.Writer;   	
+
+	class Program
+    {	
         static void Main(string[] args)
         {
             ModuleDefMD module = ModuleDefMD.Load(args[0]); // هنا يسوي لود للبرنامج عشان يدخل على التشفير
@@ -13,7 +18,7 @@ using dnlib.DotNet.Writer;
                 PEHeadersOptions = { NumberOfRvaAndSizes = 13 },
                 Logger = DummyLogger.NoThrowInstance
             }); // < الحفظ
-        }
+        }       
         public static void String(ModuleDefMD module ) // هنا يستدعي البرنامج لن بلعقل وشلون تبي تشفره بدون مايكون في برنامج؟ 
         {
             foreach (TypeDef type in module.GetTypes())  // هنا يستدعي الtypes
